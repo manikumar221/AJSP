@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<html lang="en" ng-app="app" ng-controller="ctrl">
+
+
+
+<label> uname : </label> &emsp;&emsp;&emsp;
+<input type="text" placeholder="User Name" ng-model="uname"><br/><br/>
+
+<label> upwd  : </label>  &emsp;&emsp;&emsp;
+<input type="password" placeholder="Enter Password" ng-model="upwd"><br/><br/>
+
+<button ng-click="save({'uname':uname,'upwd':upwd})">Save</button> &emsp;
+<button ng-click="read()"> Read </button> &emsp;
+<button ng-click="remove()"> Delete </button><br/><br/>
+<h1 style = "color : red "> {{var_one}}</h1>
+
+    <script src="bower_components/angular/angular.min.js"></script>
+
+    <script src="bower_components/ngstorage/ngStorage.js"></script>
+
+    <script>
+
+        var app = angular.module("app",["ngStorage"]);
+
+        app.controller("ctrl",ctrl);
+        ctrl.$inject=["$scope" ,"$localStorage"];
+        function ctrl($scope ,$localStorage) {
+            $scope.save = function (obj) {
+                $localStorage.key_one = obj;
+
+            };
+
+            $scope.read = function () {
+                $scope.var_one = $localStorage.key_one.uname + "..." + $localStorage.key_one.upwd;
+            };
+            $scope.remove = function () {
+                delete $localStorage.key_one;
+                $scope.var_one="";
+                $scope.uname = "";
+                $scope.upwd = "";
+            };
+        }
+    </script>
+</html>

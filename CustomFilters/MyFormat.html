@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<script src="../bower_components/angular/angular.min.js"></script>
+<div ng-app="app" ng-controller="ctrl">
+
+    <ul>
+        <li ng-repeat="x in names">
+
+            {{x | myFormat}}
+        </li>
+
+    </ul>
+
+<script>
+
+    var app=angular.module('app',[]);
+    app.filter('myFormat',function(){
+
+       return function(x){
+
+           var i,c,txt='';
+           for(i=0;i<x.length;i++){
+
+               c=x[i];
+               if(i % 2 ==0){
+
+                   c=c.toUpperCase();
+               }
+               txt +=c;
+
+           }
+           return txt;
+       };
+
+    });
+    app.controller('ctrl', function($scope) {
+        $scope.names = [
+            'Jani',
+            'Carl',
+            'Margareth',
+            'Hege',
+            'Joe',
+            'Gustav',
+            'Birgit',
+            'Mary',
+            'Kai'
+        ];
+    });
+
+</script>
+
+</div>
+</html>

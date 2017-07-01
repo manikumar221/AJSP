@@ -1,0 +1,24 @@
+
+<html>
+
+
+<div style = "color:red " id="div_one"> Hello </div>
+
+<div style="color : green" id="div_two">      </div>
+
+
+<button onclick = "fun()"> copy </button>
+
+
+
+<script>
+
+    function fun(){
+
+        var e=document.getElementById("div_two").innerHTML = document.getElementById("div_one").value;
+        console.log(e);
+
+    }
+
+</script>
+</html>

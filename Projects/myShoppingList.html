@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myShoppingList" ng-controller="myCtrl">
+
+
+
+<script src="../bower_components/angular/angular.min.js"></script>
+
+<link rel="stylesheet" href="../bower_components/angular/angular-csp.css">
+
+<div  style="max-width:400px;">
+
+        <h3>My Shopping List</h3>
+
+<ul>
+    <li ng-repeat="x in products" style="border: 1px;" paddind="15">{{x}}<span ng-click="removeItem($index)">X</span></li>
+</ul>
+
+<input ng-model="addMe">
+<button ng-click="addItem()"> AddMe </button>
+    <p style="color:red">{{errortext}}</p>
+</div>
+
+
+<script>
+     var app = angular.module('myShoppingList',[]);
+     app.controller('myCtrl',function ($scope) {
+
+         $scope.products=["Milk","Butter","Panner"];
+
+         $scope.addItem = function(){
+             $scope.errortext="";
+             if (!$scope.addMe){return;}
+             if ($scope.products.indexOf($scope.addMe)== -1){
+                 $scope.products.push($scope.addMe);
+             }
+             else{
+                 $scope.errortext="The Item is already in your cart"
+             };
+         }
+
+        /* $scope.addItem = function () {
+             $scope.errortext = "";
+             if (!$scope.addMe) {return;}
+             if ($scope.products.indexOf($scope.addMe) == -1) {
+                 $scope.products.push($scope.addMe);
+             } else {
+                 $scope.errortext = "The item is already in your shopping list.";
+             }
+         }*/
+         $scope.removeItem=function (x) {
+             $scope.errortext="";
+             $scope.products.splice(x,1)
+
+         }
+     })
+
+
+ </script>
+</html>

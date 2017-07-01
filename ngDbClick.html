@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app" ng-controller="ctrl" ng-init="my_model=data[2]">
+<script src="bower_components/angular/angular.min.js"></script>
+<select ng-model = "my_model" ng-options="x as x for x in data">
+    <option value="">--ChooseOne--</option>
+
+
+</select><br/><br/>
+<button ng-dblclick="clickMe(my_model)">DoubleClick</button>
+<script>
+    var app=angular.module('app',[]);
+    app.controller('ctrl',ctrl);
+    ctrl.$inject=['$scope'];
+    function ctrl($scope){
+
+        $scope.data =["option_1","option_2","option_3","option_4","option_5"];
+        $scope.clickMe=function (arg1) {
+
+        }
+    }
+</script>
+
+</html>

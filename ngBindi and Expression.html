@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app" ng-controller="ctrl">
+
+<head>
+    Quantity : <input type="number" ng-model="Q">
+    price:   <input type="number" ng-model="P">
+    <p ng-bind="Q*P"></p>
+    {{quantity*price}}
+</head>
+<script src="bower_components/angular/angular.min.js"></script>
+<script>
+
+    var app=angular.module('app',[]);
+    app.controller('ctrl',function ($scope) {
+        $scope.quantity=50;
+        $scope.price=55;
+
+    })
+</script>
+
+</html>

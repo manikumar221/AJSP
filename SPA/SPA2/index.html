@@ -1,0 +1,25 @@
+
+<html ng-app="myapp" ng-controller="HomeController">
+
+
+<script src="../../bower_components/angular/angular.min.js"></script>
+
+<script src="bower_components/angular-route/angular-route.min.js"></script>
+
+
+
+<h1>{{message}}</h1>
+
+
+<a href="#/home">Home</a>
+<a href="#/blog">Blog</a>
+<a href="#/about">About</a>
+
+<div class="container">
+
+<div ng-view></div>
+</div>
+<script src="./app.js"></script>
+<script src="./controller.js"></script>
+
+</html>

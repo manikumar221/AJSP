@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="my-app" ng-controller="my-ctrl">
+<script src="bower_components/angular/angular.min.js"></script>
+<h1 style="color:red" > {{var_one}}+{{var_two}}+{{var_three}}</h1>
+
+<script>
+    var app = angular.module('my-app',[]);
+
+
+    app.controller('my-ctrl',ctrl);
+    ctrl.$inject=['$scope'];
+    function ctrl($scope){
+        $scope.var_one="Angular2";
+        $scope.var_two="Angular";
+        $scope.var_three="NodeJS";
+
+    /*app.controller('ctrl',function($scope){
+        $scope.var_one="Angular2";
+        $scope.var_two="Angular";
+        $scope.var_three="NodeJS";
+*/
+    }
+
+
+
+
+
+</script>
+
+</html>

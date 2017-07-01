@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="my_app">
+<script src="bower_components/angular/angular.min.js"></script>
+
+<p>this is rootscope color:</p>
+<h1>{{color}}</h1>
+
+<div ng-controller="my_ctrl">
+
+
+    <p>this is scope color:</p>
+    <h1>{{color}}</h1>
+</div>
+
+    <p>this is rootscope color still:</p>
+    <h1>{{color}}</h1>
+
+
+<script>
+
+    var app=angular.module('my_app',[]);
+
+    app.run(function($rootScope){
+
+        $rootScope.color='blue';
+    });
+    app.controller('my_ctrl',function ctrl($scope) {
+        $scope.color='green';
+
+    });
+
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp" ng-controller="myCtrl">
+<script src="../bower_components/angular/angular.min.js"></script>
+<h1 ng-mousemove="count=count+1">MouseOverMe</h1>
+<h2 style="color: #00b3ee">{{count}}
+
+<script>
+    var app = angular.module('myApp', []);
+    app.controller('myCtrl', function($scope) {
+        $scope.count = 0;
+    });
+</script>
+</html>

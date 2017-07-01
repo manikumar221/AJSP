@@ -1,0 +1,11 @@
+{
+  "name" : "nareshit",
+  "dependencies" : {
+    "angular":"~1.6.0",
+    "bootstrap": "~3.3.6",
+    "ngstorage":"~0.3.11",
+    "angular-route":"~1.6.0"
+  }
+
+
+}

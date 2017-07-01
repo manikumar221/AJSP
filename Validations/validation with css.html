@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<style>
+    input.ng-invalid {
+        background-color:pink;
+    }
+    input.ng-valid {
+        background-color:lightgreen;
+    }
+</style>
+<body ng-app="">
+
+<p>Try writing in the input field:</p>
+
+<form name="myForm">
+    <input name="myName" ng-model="myName" required>
+</form>
+
+<p>The input field requires content, and will therefore become green when you write in it.</p>
+
+</body>
+</html>
+<!--
+
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<style>
+    form.ng-pristine {
+        background-color:lightblue;
+    }
+    form.ng-dirty {
+        background-color:pink;
+    }
+</style>
+<body ng-app="">
+
+<form name="myForm">
+    <p>Try writing in the input field:</p>
+
+    <input name="myName" ng-model="myName" required>
+
+    <p>The form gets a "ng-dirty" class when the form has been modified, and will therefore turn pink.</p>
+</form>
+
+</body>
+</html>
+-->
+

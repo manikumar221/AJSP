@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app" ng-controller ="ctrl">
+<label> uname : </label> &emsp;&emsp;&emsp;
+<input type ="text" placeholder="Enter Username" ng-Model="uname"> <br/><br/>
+
+<label> upwd : </label> &emsp;&emsp;&emsp;
+<input type="text" placeholder="Enter Password" ng-Model="upwd"> <br/><br/>
+
+<button ng-click="save({'uname':uname,'upwd':upwd})">Save</button>&emsp;
+<button ng-click="read()">Read</button>&emsp;
+<button ng-click="remove()">Delete</button>&emsp;
+<h1 style = "color : green"> {{var_one}}</h1>
+
+<script src="../Local Storage/bower_components/angular/angular.min.js"></script>
+
+<script src="../Local Storage/bower_components/ngstorage/ngStorage.min.js"></script>
+
+<script>
+    /*var app = angular.module('app',['ngStorage']);
+
+    app.controller('ctrl',ctrl);
+    ctrl.$inject=["$scope","$localStorage"];
+    function ctrl($scope,$localStorage){
+        $scope.save=function(arg){
+            $localStorage.key_two=arg;
+
+
+        };
+    }
+*/
+
+    var app = angular.module('app',['ngStorage']);
+
+    app.controller('ctrl',ctrl);
+    ctrl.$inject=["$scope","$sessionStorage"];
+    function ctrl($scope,$sessionStorage){
+        $scope.save=function(arg){
+            $sessionStorage.key_two=arg;
+
+
+        };
+
+        $scope.read = function () {
+            $scope.var_one = $sessionStorage.key_two.uname + "..." + $sessionStorage.key_two.upwd;
+        };
+        $scope.remove = function () {
+            delete $sessionStorage.key_two;
+            $scope.var_one="";
+            $scope.uname = "";
+            $scope.upwd = "";
+        };
+    }
+
+
+</script>
+
+
+</html>

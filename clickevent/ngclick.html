@@ -1,0 +1,32 @@
+
+<html lang="en" ng-app="app" ng-controller="ctrl">
+
+
+First Name:<input type="text" ng-model="first"><br/>
+Last Name :<input type="text" ng-model="last"><br/>
+<button ng-click="fun()">Click Me</button><br/>
+<script src="../bower_components/angular/angular.min.js"></script>
+<p ng-bind="FullName">
+
+
+
+</p>
+<br/>
+{{FullName}}
+
+<script>
+    var app=angular.module('app', []);
+    app.controller('ctrl',ctrl);
+    ctrl.$inject=['$scope'];
+    function ctrl($scope) {
+        $scope.first="";
+        $scope.last="";
+        $scope.FullName="";
+        $scope.fun=function () {
+            $scope.FullName=$scope.first +'  '+ $scope.last;
+        }
+    }
+    
+</script>
+
+</html>
